@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AngularJS-Test | Lista de Usuarios</title>
+</head>
+<body ng-app="testApp">
+
+    <div ng-controller="UsuariosController">
+        Buscar: <input type="text" ng-model="searchUsuario" />
+        <table>
+            <thead>
+                <tr>
+                    <th>Usuario</th>
+                    <th>Nombres</th>
+                    <th>Apellidos</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="usuario in usuarios | filter : searchUsuario">
+                    <td>{{usuario.usuario}}</td>
+                    <td>{{usuario.nombres}}</td>
+                    <td>{{usuario.apellidos}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+
+<script src="../vendor/jquery-2.1.1/jquery-2.1.1.min.js"></script>
+<script src="../vendor/angularjs-1.2.21/angularjs-1.2.21.js"></script>
+
+<script src="../js/app.js"></script>
+<script src="../js/controllers/UsuariosController.js"></script>
+<script src="../js/services/usuarioService.js"></script>
+
+</html>
